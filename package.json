@@ -4,7 +4,8 @@
   "description": "desktop applet for managing a to-do list",
   "main": "index.js",
   "scripts": {
-    "test": "console.log('development started\")"
+    "test": "electron .",
+    "start": "electron ."
   },
   "author": "Salvador Escamilla",
   "license": "ISC",
