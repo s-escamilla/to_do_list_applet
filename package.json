@@ -1,0 +1,14 @@
+{
+  "name": "to_do_list_applet",
+  "version": "1.0.0",
+  "description": "desktop applet for managing a to-do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('development started\")"
+  },
+  "author": "Salvador Escamilla",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^23.1.2"
+  }
+}
