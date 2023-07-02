@@ -13,7 +13,7 @@ function createWindow(parent){
       height: 200,
       alwaysOnTop:true,
       title:'child',
-      focusable:false,
+      focusable:true,
       show:false,
       frame: false, // Set to false to remove title bar
       webPreferences: {
@@ -47,7 +47,6 @@ function createButton(width,height){
   })
   mainWindow.loadFile('button.html')
   mainWindow.setAlwaysOnTop(1)
-  
   return mainWindow
 }
 
@@ -59,13 +58,21 @@ app.whenReady().then(async () => {
   var window = createButton(width,height)
   var windowChild = createWindow(window)
   var activeInd = false
-  windowChild
+
   window.addListener('focus',function(){
     if (activeInd){
-
-        windowChild.hide()
-        console.log('hide')
-        activeInd = false}
+        window.isFocusable = false;
+        
+        setTimeout(() => {
+          
+          windowChild.hide()
+          console.log('hide')
+          
+          activeInd = false
+        }, 10);
+        window.isFocusable = true
+      }
+        
     else{
         windowChild.show()
         console.log('show')
